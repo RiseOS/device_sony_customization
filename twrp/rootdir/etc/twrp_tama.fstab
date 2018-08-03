@@ -1,0 +1,11 @@
+# mount point    fstype    device                                     [device2]              fstype2
+/boot            emmc      /dev/block/bootdevice/by-name/boot                                flags=slotselect
+/system          ext4      /dev/block/bootdevice/by-name/system                              flags=slotselect
+/system_image    emmc      /dev/block/bootdevice/by-name/system                              flags=slotselect
+/vendor          ext4      /dev/block/bootdevice/by-name/vendor                              flags=backup=1;slotselect
+/vendor_image    emmc      /dev/block/bootdevice/by-name/vendor                              flags=backup=1;slotselect
+/odm             ext4      /dev/block/bootdevice/by-name/oem                                 flags=backup=1;slotselect;display="ODM"
+/data            ext4      /dev/block/bootdevice/by-name/userdata
+
+# Removable storage
+/sdcard1         auto      /dev/block/mmcblk0p1                       /dev/block/mmcblk0     flags=display="Micro SDcard";storage;wipeingui;removable
